@@ -17,6 +17,11 @@ public class NorwegianNumbersTest {
         assertEquals("to", toNorwegian(2));
     }
 
+    @Test
+    void shouldReturnTreForThree() {
+        assertEquals("tre", toNorwegian(3));
+    }
+
     private String toNorwegian(int i) {
         Map<Integer, String> numbers = Map.of(1, "en", 2, "to");
         return numbers.get(i);
