@@ -20,7 +20,9 @@ public class NorwegianNumbersTest {
                 testConvert("førtini", 49),
                 testConvert("ett hundre", 100),
                 testConvert("ett hundre og femtifem", 155),
-                testConvert("to hundre", 200)
+                testConvert("to hundre", 200),
+                testConvert("seks hundre og sekstiåtte", 668),
+                testConvert("ett tusen", 1000)
         );
     }
 
