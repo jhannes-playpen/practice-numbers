@@ -5,33 +5,34 @@ import java.util.Map;
 
 public class NorwegianNumbers {
 
-    private static Map<Integer, String> NUMBERS = new HashMap<>();
+    private static Map<Long, String> NUMBERS = new HashMap<>();
 
     static {
-        NUMBERS.put(1, "en");
-        NUMBERS.put(2, "to");
-        NUMBERS.put(3, "tre");
-        NUMBERS.put(4, "fire");
-        NUMBERS.put(5, "fem");
-        NUMBERS.put(6, "seks");
-        NUMBERS.put(7, "syv");
-        NUMBERS.put(8, "åtte");
-        NUMBERS.put(9, "ni");
-        NUMBERS.put(10, "ti");
-        NUMBERS.put(11, "elleve");
-        NUMBERS.put(12, "tolv");
-        NUMBERS.put(20, "tjue");
-        NUMBERS.put(40, "førti");
-        NUMBERS.put(50, "femti");
-        NUMBERS.put(60, "seksti");
-        NUMBERS.put(80, "åtti");
-        NUMBERS.put(100, "ett hundre");
-        NUMBERS.put(1000, "ett tusen");
-        NUMBERS.put(1000_000, "en million");
-        NUMBERS.put(1000_000_000, "en milliard");
+        NUMBERS.put(1L, "en");
+        NUMBERS.put(2L, "to");
+        NUMBERS.put(3L, "tre");
+        NUMBERS.put(4L, "fire");
+        NUMBERS.put(5L, "fem");
+        NUMBERS.put(6L, "seks");
+        NUMBERS.put(7L, "syv");
+        NUMBERS.put(8L, "åtte");
+        NUMBERS.put(9L, "ni");
+        NUMBERS.put(10L, "ti");
+        NUMBERS.put(11L, "elleve");
+        NUMBERS.put(12L, "tolv");
+        NUMBERS.put(20L, "tjue");
+        NUMBERS.put(40L, "førti");
+        NUMBERS.put(50L, "femti");
+        NUMBERS.put(60L, "seksti");
+        NUMBERS.put(80L, "åtti");
+        NUMBERS.put(90L, "nitti");
+        NUMBERS.put(100L, "ett hundre");
+        NUMBERS.put(1000L, "ett tusen");
+        NUMBERS.put(1000_000L, "en million");
+        NUMBERS.put(1000_000_000L, "en milliard");
     }
 
-    public static String toNorwegian(int number) {
+    public static String toNorwegian(long number) {
         if (NUMBERS.containsKey(number)) {
             return NUMBERS.get(number);
         }
@@ -53,7 +54,7 @@ public class NorwegianNumbers {
         throw new IllegalArgumentException("Don't know how to deal with " + number);
     }
 
-    private static String convertBigNumber(int number, int bigNumber, String bigNumberName) {
+    private static String convertBigNumber(long number, int bigNumber, String bigNumberName) {
         if (number % bigNumber == 0) {
             return toNorwegian(number / bigNumber) + " " + bigNumberName;
         } else if (number % bigNumber >= 100) {

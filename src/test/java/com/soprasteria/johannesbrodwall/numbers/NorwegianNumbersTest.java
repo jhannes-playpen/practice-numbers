@@ -29,11 +29,12 @@ public class NorwegianNumbersTest {
                 testConvert("ett hundre og tjuetre tusen ett hundre", 123_100),
                 testConvert("ni hundre og åttisyv millioner seks hundre og femtifire tusen tre hundre og tjueen", 987_654_321),
                 testConvert("en milliard en million", 1_001_000_000),
-                testConvert("en milliard en million", 987_654_321_098)
+                testConvert("ni hundre og åttisyv milliarder seks hundre og femtifire millioner tre hundre og tjueen tusen og nittiåtte",
+                        987_654_321_098L)
         );
     }
 
-    private DynamicTest testConvert(String expected, int number) {
+    private DynamicTest testConvert(String expected, long number) {
         return dynamicTest("return " + expected + " for " + number,
                 () -> assertEquals(expected, NorwegianNumbers.toNorwegian(number)));
     }
