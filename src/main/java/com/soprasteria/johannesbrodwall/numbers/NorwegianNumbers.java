@@ -11,6 +11,7 @@ public class NorwegianNumbers {
         NUMBERS.put(1, "en");
         NUMBERS.put(2, "to");
         NUMBERS.put(3, "tre");
+        NUMBERS.put(4, "fire");
         NUMBERS.put(5, "fem");
         NUMBERS.put(6, "seks");
         NUMBERS.put(7, "syv");
@@ -23,6 +24,7 @@ public class NorwegianNumbers {
         NUMBERS.put(40, "førti");
         NUMBERS.put(50, "femti");
         NUMBERS.put(60, "seksti");
+        NUMBERS.put(80, "åtti");
         NUMBERS.put(100, "ett hundre");
         NUMBERS.put(1000, "ett tusen");
     }
@@ -30,6 +32,15 @@ public class NorwegianNumbers {
     public static String toNorwegian(int number) {
         if (NUMBERS.containsKey(number)) {
             return NUMBERS.get(number);
+        }
+        if (number > 1_000_000) {
+            if (number % 1_000_000 == 0) {
+                return toNorwegian(number / 1_000_000) + " millioner";
+            } else if (number % 1_000_000 >= 100) {
+                return toNorwegian(number - number % 1_000_000) + " " + toNorwegian(number % 1_000_000);
+            } else {
+                return toNorwegian(number - number % 1_000_000) + " og " + toNorwegian(number % 1_000_000);
+            }
         }
         if (number > 1000) {
             if (number % 1000 == 0) {
