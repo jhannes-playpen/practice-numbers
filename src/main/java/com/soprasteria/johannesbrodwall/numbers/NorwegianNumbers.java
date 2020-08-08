@@ -15,6 +15,7 @@ public class NorwegianNumbers {
         NUMBERS.put(6, "seks");
         NUMBERS.put(8, "åtte");
         NUMBERS.put(9, "ni");
+        NUMBERS.put(10, "ti");
         NUMBERS.put(20, "tjue");
         NUMBERS.put(40, "førti");
         NUMBERS.put(50, "femti");
@@ -28,14 +29,19 @@ public class NorwegianNumbers {
             return NUMBERS.get(number);
         }
         if (number > 1000) {
-            return toNorwegian(number/1000) + " tusen";
+            if (number % 100 != 0) {
+                return toNorwegian(number - number % 1000) + " og " + toNorwegian(number % 1000);
+            } else {
+                return toNorwegian(number / 1000) + " tusen";
+            }
         }
-        if (number > 100)
+        if (number > 100) {
             if (number % 100 != 0) {
                 return toNorwegian(number - number % 100) + " og " + toNorwegian(number % 100);
             } else {
-                return toNorwegian(number/100) + " hundre";
+                return toNorwegian(number / 100) + " hundre";
             }
+        }
         if (number > 20 && number % 10 != 0) {
             return toNorwegian(number - number % 10) + toNorwegian(number % 10);
         }
