@@ -23,7 +23,8 @@ public class NorwegianNumbersTest {
                 testConvert("to hundre", 200),
                 testConvert("seks hundre og sekstiåtte", 668),
                 testConvert("ett tusen", 1000),
-                testConvert("to tusen", 2000)
+                testConvert("to tusen", 2000),
+                testConvert("tre tusen og ti", 2010)
         );
     }
 
