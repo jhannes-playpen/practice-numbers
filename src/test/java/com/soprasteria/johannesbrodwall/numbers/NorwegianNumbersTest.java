@@ -10,7 +10,12 @@ public class NorwegianNumbersTest {
         assertEquals("en", toNorwegian(1));
     }
 
+    @Test
+    void shouldReturnToForTwo() {
+        assertEquals("to", toNorwegian(2));
+    }
+
     private String toNorwegian(int i) {
-        return null;
+        return "en";
     }
 }
