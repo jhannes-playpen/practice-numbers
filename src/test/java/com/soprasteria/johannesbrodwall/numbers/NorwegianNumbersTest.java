@@ -2,6 +2,8 @@ package com.soprasteria.johannesbrodwall.numbers;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NorwegianNumbersTest {
@@ -16,6 +18,7 @@ public class NorwegianNumbersTest {
     }
 
     private String toNorwegian(int i) {
-        return "en";
+        Map<Integer, String> numbers = Map.of(1, "en", 2, "to");
+        return numbers.get(i);
     }
 }
