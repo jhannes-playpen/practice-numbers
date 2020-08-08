@@ -17,7 +17,8 @@ public class NorwegianNumbersTest {
                 testConvert("en", 1),
                 testConvert("to", 2),
                 testConvert("tre", 3),
-                testConvert("tjue", 20)
+                testConvert("tjue", 20),
+                testConvert("tjueen", 21)
         );
     }
 
