@@ -34,7 +34,7 @@ public class NorwegianNumbers {
         if (number > 1000) {
             if (number % 1000 == 0) {
                 return toNorwegian(number / 1000) + " tusen";
-            } else if (number % 1000 > 100) {
+            } else if (number % 1000 >= 100) {
                 return toNorwegian(number - number % 1000) + " " + toNorwegian(number % 1000);
             } else {
                 return toNorwegian(number - number % 1000) + " og " + toNorwegian(number % 1000);
