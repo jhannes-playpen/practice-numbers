@@ -18,7 +18,8 @@ public class NorwegianNumbersTest {
                 testConvert("to", 2),
                 testConvert("tre", 3),
                 testConvert("tjue", 20),
-                testConvert("tjueen", 21)
+                testConvert("tjueen", 21),
+                testConvert("førtini", 49)
         );
     }
 
@@ -27,8 +28,17 @@ public class NorwegianNumbersTest {
                 () -> assertEquals(expected, toNorwegian(number)));
     }
 
-    private String toNorwegian(int i) {
-        Map<Integer, String> numbers = Map.of(1, "en", 2, "to", 3, "tre", 20, "tjue");
-        return numbers.get(i);
+    private String toNorwegian(int number) {
+        Map<Integer, String> numbers = Map.of(1, "en",
+                2, "to",
+                3, "tre",
+                9, "ni",
+                20, "tjue",
+                40, "førti"
+        );
+        if (number > 20 && number % 10 != 0) {
+            return toNorwegian(number-number%10) + toNorwegian(number%10);
+        }
+        return numbers.get(number);
     }
 }
