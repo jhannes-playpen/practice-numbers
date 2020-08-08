@@ -5,27 +5,27 @@ import java.util.Map;
 
 public class NorwegianNumbers {
 
-    private static Map<Integer, String> numbers = new HashMap<>();
+    private static Map<Integer, String> NUMBERS = new HashMap<>();
 
     static {
-        numbers.put(1, "en");
-        numbers.put(2, "to");
-        numbers.put(3, "tre");
-        numbers.put(5, "fem");
-        numbers.put(6, "seks");
-        numbers.put(8, "åtte");
-        numbers.put(9, "ni");
-        numbers.put(20, "tjue");
-        numbers.put(40, "førti");
-        numbers.put(50, "femti");
-        numbers.put(60, "seksti");
-        numbers.put(100, "ett hundre");
-        numbers.put(1000, "ett tusen");
+        NUMBERS.put(1, "en");
+        NUMBERS.put(2, "to");
+        NUMBERS.put(3, "tre");
+        NUMBERS.put(5, "fem");
+        NUMBERS.put(6, "seks");
+        NUMBERS.put(8, "åtte");
+        NUMBERS.put(9, "ni");
+        NUMBERS.put(20, "tjue");
+        NUMBERS.put(40, "førti");
+        NUMBERS.put(50, "femti");
+        NUMBERS.put(60, "seksti");
+        NUMBERS.put(100, "ett hundre");
+        NUMBERS.put(1000, "ett tusen");
     }
 
     public static String toNorwegian(int number) {
-        if (numbers.containsKey(number)) {
-            return numbers.get(number);
+        if (NUMBERS.containsKey(number)) {
+            return NUMBERS.get(number);
         }
         if (number > 100)
             if (number % 100 != 0) {
@@ -36,6 +36,6 @@ public class NorwegianNumbers {
         if (number > 20 && number % 10 != 0) {
             return toNorwegian(number - number % 10) + toNorwegian(number % 10);
         }
-        return numbers.get(number);
+        throw new IllegalArgumentException("Don't know how to deal with " + number);
     }
 }
