@@ -35,7 +35,8 @@ public class NorwegianNumbersTest {
                 3, "tre",
                 9, "ni",
                 20, "tjue",
-                40, "førti"
+                40, "førti",
+                100, "ett hundre"
         );
         if (number > 20 && number % 10 != 0) {
             return toNorwegian(number-number%10) + toNorwegian(number%10);
