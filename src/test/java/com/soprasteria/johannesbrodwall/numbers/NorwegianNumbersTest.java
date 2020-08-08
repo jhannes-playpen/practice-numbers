@@ -14,6 +14,9 @@ public class NorwegianNumbersTest {
     @TestFactory
     List<DynamicTest> numberTests() {
         return List.of(
+                testConvert("en", 1),
+                testConvert("to", 2),
+                testConvert("tre", 3),
                 testConvert("tjue", 20)
         );
     }
@@ -21,21 +24,6 @@ public class NorwegianNumbersTest {
     private DynamicTest testConvert(String expected, int number) {
         return dynamicTest("return " + expected + " for " + number,
                 () -> assertEquals(expected, toNorwegian(number)));
-    }
-
-    @Test
-    void shouldReturnEnForOne() {
-        assertEquals("en", toNorwegian(1));
-    }
-
-    @Test
-    void shouldReturnToForTwo() {
-        assertEquals("to", toNorwegian(2));
-    }
-
-    @Test
-    void shouldReturnTreForThree() {
-        assertEquals("tre", toNorwegian(3));
     }
 
     private String toNorwegian(int i) {
