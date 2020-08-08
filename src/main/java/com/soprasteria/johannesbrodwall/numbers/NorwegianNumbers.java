@@ -27,11 +27,16 @@ public class NorwegianNumbers {
         NUMBERS.put(80, "åtti");
         NUMBERS.put(100, "ett hundre");
         NUMBERS.put(1000, "ett tusen");
+        NUMBERS.put(1000_000, "en million");
+        NUMBERS.put(1000_000_000, "en milliard");
     }
 
     public static String toNorwegian(int number) {
         if (NUMBERS.containsKey(number)) {
             return NUMBERS.get(number);
+        }
+        if (number > 1_000_000_000) {
+            return convertBigNumber(number, 1_000_000_000, "milliarder");
         }
         if (number > 1_000_000) {
             return convertBigNumber(number, 1_000_000, "millioner");
