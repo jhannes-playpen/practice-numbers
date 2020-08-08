@@ -8,13 +8,19 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 public class NorwegianNumbersTest {
     @TestFactory
     List<DynamicTest> numberTests() {
         return List.of(
-                DynamicTest.dynamicTest("return tjue for 20", () -> assertEquals("tjue", toNorwegian(20)))
+                testConvert("tjue", 20)
         );
+    }
+
+    private DynamicTest testConvert(String expected, int number) {
+        return dynamicTest("return " + expected + " for " + number,
+                () -> assertEquals(expected, toNorwegian(number)));
     }
 
     @Test
