@@ -12,14 +12,16 @@ public class NorwegianNumbers {
             20, "tjue",
             40, "førti",
             50, "femti",
-            100, "ett hundre",
-            200, "to hundre"
+            100, "ett hundre"
     );
 
     public static String toNorwegian(int number) {
-        if (number > 100 && number % 100 != 0) {
-            return toNorwegian(number - number % 100) + " og " + toNorwegian(number % 100);
-        }
+        if (number > 100)
+            if (number % 100 != 0) {
+                return toNorwegian(number - number % 100) + " og " + toNorwegian(number % 100);
+            } else {
+                return toNorwegian(number/100) + " hundre";
+            }
         if (number > 20 && number % 10 != 0) {
             return toNorwegian(number - number % 10) + toNorwegian(number % 10);
         }
