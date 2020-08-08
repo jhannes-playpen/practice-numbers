@@ -19,7 +19,8 @@ public class NorwegianNumbersTest {
                 testConvert("tre", 3),
                 testConvert("tjue", 20),
                 testConvert("tjueen", 21),
-                testConvert("førtini", 49)
+                testConvert("førtini", 49),
+                testConvert("ett hundre", 100)
         );
     }
 
