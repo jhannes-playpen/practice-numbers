@@ -21,6 +21,7 @@ public class NorwegianNumbers {
         NUMBERS.put(60, "seksti");
         NUMBERS.put(100, "ett hundre");
         NUMBERS.put(1000, "ett tusen");
+        NUMBERS.put(2000, "to tusen");
     }
 
     public static String toNorwegian(int number) {
